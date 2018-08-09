@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib
 from matplotlib import pyplot as plt
 
-def stochastic_process(runs,steps):
+def Wiener(runs,steps):
 
     x = np.linspace(0,steps,steps)
 
@@ -16,4 +16,4 @@ def stochastic_process(runs,steps):
 runs = int(input("Specifiy number of simulated processes: "))
 steps = int(input("Specifiy number of time steps: "))
 
-stochastic_process(runs,steps)
+Wiener(runs,steps)
