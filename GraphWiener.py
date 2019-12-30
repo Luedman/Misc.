@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib
 from matplotlib import pyplot as plt
 
-def Wiener(runs,steps):
+def wiener(runs,steps):
 
     x = np.linspace(0,steps,steps)
 
@@ -16,4 +16,4 @@ def Wiener(runs,steps):
 runs = int(input("Specifiy number of simulated processes: "))
 steps = int(input("Specifiy number of time steps: "))
 
-Wiener(runs,steps)
+wiener(runs,steps)

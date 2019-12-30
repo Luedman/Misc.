@@ -1,6 +1,6 @@
 import math
 import numpy as np
-import scipy.misc as smp
+from PIL import Image
 
 def rn_generator(gen_numbers, seed = 1, a = 1664625, b = 1013912228, m = math.pow(2,32)):
 
@@ -20,7 +20,7 @@ def rn_generator(gen_numbers, seed = 1, a = 1664625, b = 1013912228, m = math.po
 
     return result, pic_dims, m
 
-result, pic_dims, m    = rn_generator(100000)
+result, pic_dims, m    = rn_generator(1000000)
 pic_data               = np.zeros((pic_dims,pic_dims,3), dtype=np.uint8 )
 
 for y in range(1,pic_dims):
@@ -28,5 +28,5 @@ for y in range(1,pic_dims):
         if result[y*x]/m < 0.5:
             pic_data[x,y] = [254,254,254]
 
-img = smp.toimage(pic_data)
+img = Image.fromarray(pic_data)
 img.show()
